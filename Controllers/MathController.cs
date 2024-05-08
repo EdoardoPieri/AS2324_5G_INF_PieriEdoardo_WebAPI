@@ -24,5 +24,17 @@ namespace AS2324_5G_INF_PieriEdoardo_WebAPI.Controllers
             }
             return Json(new { status = "OK", result = res });
         }
+        [HttpGet("AnnoBisestile")]
+        public JsonResult AnnoBisestile(int anno)
+        {
+            if (anno % 400 == 0 || (anno % 4 == 0 && !(anno % 100 == 0)))
+            {
+                return Json(new { status = "OK", bisestile = true });
+            }
+            else
+            {
+                return Json(new { status = "OK", bisestile = false });
+            }
+        }
     }
 }
