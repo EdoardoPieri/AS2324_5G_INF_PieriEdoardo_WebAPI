@@ -36,5 +36,10 @@ namespace AS2324_5G_INF_PieriEdoardo_WebAPI.Controllers
                 return Json(new { status = "OK", bisestile = false });
             }
         }
+        [HttpGet("CalcoloIpotenusa")]
+        public JsonResult CalcoloIpotenusa(double cateto1, double cateto2)
+        {
+            return Json(new { status = "OK", ipotenusa = Math.Sqrt((cateto1 * cateto1) + (cateto2 * cateto2)) });
+        }
     }
 }
